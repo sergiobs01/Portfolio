@@ -1,0 +1,460 @@
+/* Design */
+
+body {
+  /* background-color: #20232A; */
+  background-image: url(../images/backgroud/background_main.jpg);
+  background-blend-mode: normal;
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  font-family: 'Ubuntu Mono', monospace;
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: none;
+  /* !!! CAMBIAR A NONE !!! */
+}
+
+#navbar-container {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.aboutpage,
+.projectspage,
+.edupage,
+.experiencepage,
+.skillspage {
+  top: 12%;
+}
+
+.aboutpage .row,
+.projectspage .row {
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.aboutpage .about-icon,
+.projectspage .projects-icon,
+.edupage .edupage-icon,
+.experiencepage .experiencepage-icon,
+.skillspage .skillspage-icon {
+  width: 12vw;
+  font-size: 1.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.carouselTPV,
+.carouselRFID,
+.carouselPortfolio {
+  width: 75%;
+  margin-left: 10%;
+  margin-bottom: 20%;
+  margin-top: 5%;
+}
+
+.edupage .title {
+  font-size: 2.25rem;
+  margin-top: 2%;
+  margin-left: 2.5%;
+  margin-bottom: 1%;
+  font-weight: bold;
+  color: deepskyblue;
+  text-decoration: underline;
+}
+
+.edupage .degree {
+  font-size: 1.5rem;
+  margin-left: 2.5%;
+  font-weight: bold;
+}
+
+.edupage .time {
+  font-size: 1rem;
+  margin-left: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+.skillspage .img-fluid {
+  height: 30px;
+  margin-right: 8%;
+}
+
+.projectspage .img-fluid {
+  height: 25px;
+  margin-right: 8%;
+}
+
+.skillspage .language-item {
+  font-size: 1.25rem;
+  margin-top: 20%;
+  transition: transform 0.3s ease;
+}
+
+.projectspage .language-item {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.framework-item {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.language-item:hover,
+.framework-item:hover {
+  transform: scale(1.2);
+}
+
+.skillspage .title {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.skillspage .title2 {
+  margin-top: 15%;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.skillspage .subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .img-fluid {
+  height: 40px;
+}
+
+.navbar .img-fluid:hover{
+  content:url('../images/logo/kn_logo_on.png');
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar-nav-centered {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    top: 25%;
+    position: relative;
+  }
+
+  .navbar-nav-centered .nav-item {
+    display: inline-block;
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+  }
+
+  .aboutpage {
+    top: 12%;
+  }
+
+  .aboutpage .about-icon,
+  .edupage .edupage-icon {
+    width: 30vw;
+    font-size: 1.25rem;
+    margin-bottom: 2%;
+  }
+
+  .experiencepage .experiencepage-icon,
+  .skillspage .skillspage-icon {
+    width: 38vw;
+    font-size: 1.25rem;
+    margin-bottom: 5%;
+  }
+
+  .aboutpage .row .h1 {
+    font-size: 1.25rem;
+  }
+
+  .aboutpage .row .h5 {
+    font-size: 0.8rem;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+
+  .aboutpage .row .btn {
+    font-size: 0.8rem;
+    /* margin-bottom: 5%; */
+  }
+
+  .projectspage .projects-icon {
+    width: 30vw;
+    font-size: 1.25rem;
+  }
+
+  .carouselTPV,
+  .carouselRFID,
+  .carouselPortfolio {
+    width: 75%;
+  }
+
+  .edupage .title {
+    font-size: 1.25rem;
+    margin-top: 5%;
+    margin-left: 2.5%;
+    margin-bottom: 3%;
+    font-weight: bold;
+    color: deepskyblue;
+    text-decoration: underline;
+  }
+
+  .edupage .degree {
+    font-size: 1rem;
+    margin-left: 2.5%;
+    font-weight: bold;
+  }
+
+  .edupage .time {
+    font-size: 0.7rem;
+    margin-left: 2.5%;
+    margin-bottom: 5%;
+  }
+
+  .skillspage .title {
+    font-size: 1.25rem;
+  }
+
+  .skillspage .title2 {
+    margin-top: 15%;
+    font-size: 1.25rem;
+  }
+
+  .skillspage .img-fluid {
+    height: 25px;
+    margin-right: 8%;
+  }
+
+  .projectspage .img-fluid {
+    height: 15px;
+    margin-right: 8%;
+  }
+
+  .skillspage .language-item {
+    font-size: 1rem;
+    margin-top: 6%;
+  }
+
+  .projectspage .language-item {
+    font-size: 0.65rem;
+    margin-top: 6%;
+  }
+
+  .skillspage .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .framework-item {
+    font-size: 1rem;
+  }
+
+  .navbar .img-fluid {
+    height: 30px;
+  }
+}
+
+@media (min-width: 767.98px) and (max-width: 1450px) {
+  .sidebar {
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar-nav-centered {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    top: 25%;
+    position: relative;
+  }
+
+  .navbar-nav-centered .nav-item {
+    display: inline-block;
+  }
+
+  .aboutpage .about-icon,
+  .edupage .edupage-icon {
+    width: 20vw;
+    font-size: 1.5rem;
+    margin-bottom: 1%;
+  }
+
+  .experiencepage .experiencepage-icon,
+  .skillspage .skillspage-icon {
+    width: 20vw;
+    font-size: 1.5rem;
+    margin-bottom: 5%;
+  }
+
+  .aboutpage .row .h1 {
+    font-size: 1.75rem;
+  }
+
+  .aboutpage .row .h5 {
+    font-size: 1rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .aboutpage .row .btn {
+    font-size: 1rem;
+    /* margin-bottom: 5%; */
+  }
+
+  .aboutpage .img-fluid {
+    height: 100%;
+  }
+
+  .projectspage .projects-icon {
+    width: 20vw;
+    font-size: 1.5rem;
+  }
+
+  .carouselTPV,
+  .carouselRFID,
+  .carouselPortfolio {
+    width: 75%;
+  }
+
+  .edupage .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: deepskyblue;
+    text-decoration: underline;
+  }
+
+  .edupage .degree {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  .edupage .time {
+    font-size: 1rem;
+  }
+
+  .skillspage .title {
+    font-size: 1.25rem;
+  }
+
+  .skillspage .title2 {
+    margin-top: 15%;
+    font-size: 1.25rem;
+  }
+
+  .skillspage .img-fluid {
+    height: 25px;
+    margin-right: 8%;
+  }
+
+  .projectspage .img-fluid {
+    height: 15px;
+    margin-right: 8%;
+  }
+
+  .skillspage .language-item,
+  .projectspage .language-item {
+    font-size: 1.6rem;
+    margin-top: 6%;
+  }
+
+  .projectspage .language-item {
+    font-size: 0.65rem;
+  }
+
+  .skillspage .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .framework-item {
+    font-size: 1rem;
+  }
+}
+
+.design-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline {
+  width: 80%;
+  height: auto;
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-content {
+  padding: 20px;
+  background: #1f1f1f;
+  -webkit-box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+  box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+  border-radius: 5px;
+  color: white;
+  padding: 1.75rem;
+  transition: 0.4s ease;
+  overflow-wrap: break-word !important;
+  margin: 1rem;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.timeline-component {
+  margin: 0px 20px 20px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+  }
+
+  .timeline-middle {
+    position: relative;
+    background-image: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+    width: 3px;
+    height: 100%;
+  }
+
+  .main-middle {
+    opacity: 0;
+  }
+
+  .timeline-circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}

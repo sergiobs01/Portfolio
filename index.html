@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content="images/logo/kn_logo.png" />
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="100">
+  <meta property="og:image:height" content="100">
+  <title>Sergio Bataneros | Desarrollador de aplicaciones</title>
+  <link rel="icon" href="images/logo/kn_logo_off.png">
+
+  <!-- Load BootStrap Scripts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/animations/mac_styled.css" />
+  <link rel="stylesheet" href="styles/animations/animated_text.css" />
+  <link rel="stylesheet" href="styles/glitch/glitch_animation.css" />
+  <link rel="stylesheet" href="styles/animations/toggle_btn.css" />
+  <link rel="stylesheet" href="styles/animations/animation_tabs.css" />
+  <link rel="stylesheet" href="styles/animations/item_load.css" />
+</head>
+
+<body id="body" class="overflow-x-hidden overflow-y-hidden">
+
+  <div id="glitch" class="glitch">
+    <div class="container-glitch"></div>
+    <div class="container-glitch"></div>
+    <div class="container-glitch"></div>
+    <div class="container-glitch"></div>
+  </div>
+
+  <!-- NavBar -->
+  <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark bg-opacity-10">
+    <div id="navbar-container" class="container-fluid border-bottom border-white fixed-top">
+
+      <!-- My Logo -->
+      <a class="navbar-brand mx-3 mt-2 mb-2" onclick="reOpenWindow()" href="#">
+        <img class="img-fluid" src="images/logo/kn_logo_off.png">
+      </a>
+
+      <!-- New Toggle Btn (Disabled bcs i'm new on frontend and dont know how to fix this :D)-->
+      <input id="cbToggleBtn" type="checkbox" disabled>
+      <label class="toggle toggleBtn2 d-md-none me-3 mt-2 mb-2" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar" for="cbToggleBtn" style="z-index: 9999;">
+        <div id="bar4" class="bars"></div>
+        <div id="bar5" class="bars"></div>
+        <div id="bar6" class="bars"></div>
+      </label>
+
+      <!-- SideBar -->
+      <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+
+        <!-- Header Space for TggBtn -->
+        <div class="offcanvas-header">
+        </div>
+
+        <!-- SideBar Body -->
+        <div class="offcanvas-body mx-md-2 mt-2 fs-6 mb-2">
+          <ul class="navbar-nav navbar-nav-centered justify-content-md-end flex-grow-1 pe-3">
+
+            <!-- SideBar Items -->
+            <li class="nav-item mx-3">
+              <a id="aboutBtn" class="nav-link" href="#" onclick="pageLoadNavBar(1)" data-bs-dismiss="offcanvas">Sobre
+                mí</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a id="projectsBtn" class="nav-link" href="#" onclick="pageLoadNavBar(2)"
+                data-bs-dismiss="offcanvas">Proyectos</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a id="eduBtn" class="nav-link" href="#" onclick="pageLoadNavBar(3)"
+                data-bs-dismiss="offcanvas">Formación</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a id="experienceBtn" class="nav-link" href="#" onclick="pageLoadNavBar(4)"
+                data-bs-dismiss="offcanvas">Experiencia</a>
+            </li>
+            <li class="nav-item mb-2 mb-md-0">
+              <a id="skillsBtn" class="nav-link" href="#" onclick="pageLoadNavBar(5)"
+                data-bs-dismiss="offcanvas">Habilidades</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MacOS Window -->
+  <div id="macos-window" class="container-fluid macos-window">
+    <div class="mac-window">
+      <div class="mac-title-bar">
+        <div class="mac-buttons">
+          <div id="btnClose" class="mac-button mac-close"></div>
+          <div id="btnMinimize" class="mac-button mac-minimize"></div>
+          <div id="btnZoom" class="mac-button mac-zoom"></div>
+        </div>
+        <div class="mac-title text-white">Bienvenid@ a mi página web</div>
+      </div>
+      <div class="mac-content text-white p-4">
+
+        <!-- Simulate Terminal -->
+        <div class="console h5">SBS@Sergio-Bataneros-Sanchez ~ % </div>
+
+
+        <!-- Content -->
+        <div class="console-text-welcome welcome h1 mb-3">¡Hola, me llamo Sergio!</div>
+        <div id="animatedText" class="console-text animatedText text-white h2"></div>
+        <div class="console-text text-white h4 mt-3">Puedes saber más sobre mí usando los enlaces abajo o
+          minimizando/cerrando esta ventana.</div>
+
+        <div class="container-terminal">
+          <div class="row-terminal row justify-content-center text-center fixed-bottom">
+            <div class="col-6 col-xl-2">
+              <a class="btn btn-terminal text-white" href="#" onclick="pageLoad(1)">Sobre mí</a>
+            </div>
+
+            <div class="col-6 col-xl-2">
+              <a class="btn btn-terminal text-white" href="#" onclick="pageLoad(2)">Proyectos</a>
+            </div>
+
+            <div class="col-6 col-xl-2">
+              <a class="btn btn-terminal text-white" href="#" onclick="pageLoad(3)">Formación</a>
+            </div>
+
+            <div class="col-6 col-xl-2">
+              <a class="btn btn-terminal text-white" href="#" onclick="pageLoad(4)">Experiencia</a>
+            </div>
+
+            <div class="col-12 col-xl-2">
+              <a class="btn btn-terminal text-white" href="#" onclick="pageLoad(5)">Habilidades</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- About me -->
+  <div id="aboutpage" class="container-fluid aboutpage position-absolute text-white closed">
+    <div class="container-fluid d-flex justify-content-center align-items-center ">
+      <div class="text-center about-icon border border-white rounded fw-bold">
+        SOBRE MÍ
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-7">
+        <div class="h1 fw-bold">Soy <span class="text-warning">desarrollador de software</span>.
+          Puedo hacer cualquier tipo de proyecto, tanto <span class="text-warning">Web</span> como
+          <span class="text-warning">multidispositivo</span>.
+        </div>
+        <div class="h5 mt-md-4 me-md-5">Estoy especializado en creación de apps para dispositivos móviles,
+          pero puedo desarrollar proyectos web, también me gusta aprender en mis tiempos libres cosas
+          relacionadas con la ciberseguridad.<br><br>
+          Puedes contactar conmigo a través de
+          <a class="text-info text-decoration-none fw-bold" href="https://www.linkedin.com/in/sbataneros/">LinkedIn</a>
+          o por
+          <a class="text-info text-decoration-none fw-bold" href="mailto:sbataneros@gmail.com">correo</a>,
+          también puedes descargar mi CV en el siguiente enlace.
+        </div>
+        <div class="btn btn-outline-info mt-md-4" onclick="downloadFile('docs/resume/CV.pdf')">Descargar CV</div>
+      </div>
+      <div class="col-12 col-md-5">
+        <img class="img-fluid ms-md-5" src="images/about/hire-element.svg">
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects page -->
+  <div id="projectspage" class="container-fluid projectspage position-absolute text-white closed">
+    <div class="">
+      <div class="container-fluid d-flex justify-content-center align-items-center ">
+        <div class="text-center projects-icon border border-white rounded fw-bold">
+          PROYECTOS
+        </div>
+      </div>
+
+      <div class="item-load mb-md-5">
+        <div class="container-fluid d-flex justify-content-center align-items-center">
+          <div class="text-center fs-1 my-4 text-warning fw-bold ">
+            Baratie TPV
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div id="carouselTPV" class="carouselTPV carousel slide align-items-center h-100 m-auto">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/about/hire-element.svg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/about/hire-element.svg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/about/hire-element.svg" class="d-block w-100">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselTPV" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselTPV" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 mt-2 mt-md-0">
+            <div class="d-flex justify-content-center align-items-center text-center h-100 m-auto">
+              <div class="row my-auto">
+                <div class="col-12">
+                  Desarrollado como proyecto de fin de ciclo, su función es la de proveer control de inventario,
+                  descuentos de fidelización, venta en mesas y conexión entre múltiples dispositivos, en lenguaje Dart
+                  con el framework Flutter.
+                </div>
+
+                <div class="col-12">
+                  <div class="justify-content-center mt-2 mb-2 mt-md-4">
+                    <div class="row mx-auto">
+                      <div class="col-6 col-md-4">
+                        <div
+                          class="language-item d-flex justify-content-center align-content-center border border-white rounded-4 bg-white bg-opacity-25 p-2">
+                          <img class="img-fluid" src="images/icons/flutter.png">
+                          <span class="text-center">Flutter</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <div
+                          class="language-item d-flex justify-content-center align-content-center border border-white rounded-4 bg-white bg-opacity-25 p-2">
+                          <img class="img-fluid" src="images/icons/github.svg">
+                          <a class="text-center text-white text-decoration-none"
+                            href="https://github.com/sergiobs01/TPV_Client">Cliente</a>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-4 mt-2 mt-md-0">
+                        <div
+                          class="language-item d-flex justify-content-center align-content-center border border-white rounded-4 bg-white bg-opacity-25 p-2">
+                          <img class="img-fluid" src="images/icons/github.svg">
+                          <a class="text-center text-white text-decoration-none"
+                            href="https://github.com/sergiobs01/TPV_Api">Servidor</a>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-12 mt-2 mt-lg-4">
+                        <div
+                          class="language-item d-flex justify-content-center align-content-center border border-white rounded-4 bg-white bg-opacity-25 p-2">
+                          <img class="img-fluid" src="images/icons/multi.png">
+                          <span class="text-center">iOS/Android/PC</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class=" item-load mb-md-5">
+        <div class="container-fluid d-flex justify-content-center align-items-center">
+          <div class="text-center fs-1 my-4 text-warning fw-bold ">
+            Mifare Blocks Editor
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6 mb-4 mb-md-0">
+            <div class="d-flex justify-content-center align-items-center text-center h-100 m-auto">
+              <div class="row my-auto">
+                <div class="col-12">
+                  App para dispositivos Android que permite analizar y escribir etiquetas Mifare Classic (son necesarias
+                  sus claves). Aún en desarrollo...
+                </div>
+
+                <div class="col-12">
+                  <div class="justify-content-center mt-2 mb-2 mt-md-4">
+                    <div class="row mx-auto">
+                      <div class="col-6">
+                        <div
+                          class="language-item d-flex justify-content-center align-content-center border border-white rounded-4 bg-white bg-opacity-25 p-2">
+                          <img class="img-fluid" src="images/icons/java.png">
+                          <span class="text-center">Java</span>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div
+                          class="language-item d-flex justify-content-center align-content-center border border-white rounded-4 bg-white bg-opacity-25 p-2">
+                          <img class="img-fluid" src="images/icons/github.svg">
+                          <a class="text-center text-white text-decoration-none" href="#">GitHub</a>
+                        </div>
+                      </div>
+                      <div class="col-12 mt-lg-4">
+                        <div
+                          class="language-item d-flex justify-content-center align-content-center border border-white rounded-4 bg-white bg-opacity-25 p-2">
+                          <img class="img-fluid" src="images/icons/android.png">
+                          <span class="text-center">Android</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div id="carouselRFID" class="carouselRFID carousel slide align-items-center h-100 m-auto">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/about/hire-element.svg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/about/hire-element.svg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/about/hire-element.svg" class="d-block w-100">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselRFID" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselRFID" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item-load mb-5">
+        <div class="container-fluid d-flex justify-content-center align-items-center ">
+          <div class="text-center fs-1 my-4 text-warning fw-bold ">
+            Este porfolio
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div id="carouselPortfolio" class="carouselPortfolio carousel slide align-items-center h-100 m-auto">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/about/hire-element.svg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/about/hire-element.svg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/about/hire-element.svg" class="d-block w-100">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselPortfolio"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselPortfolio"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 mt-2 mt-md-0">
+            <div class="d-flex justify-content-center align-items-center text-center h-100 m-auto">
+              <div class="row my-auto">
+                <div class="col-12">
+                  Porfolio creado con HTML (la gran mayoría con ayuda de Bootstrap 5) y CSS.
+                </div>
+
+                <div class="col-12">
+                  <div class="justify-content-center mt-2 mb-2 mt-md-4">
+                    <div class="row mx-auto">
+                      <div class="col-6 col-md-4">
+                        <div
+                          class="language-item d-flex justify-content-center align-content-center border border-white rounded-4 bg-white bg-opacity-25 p-2">
+                          <img class="img-fluid" src="images/icons/html.png">
+                          <span class="text-center">HTML</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <div
+                          class="language-item d-flex justify-content-center align-content-center border border-white rounded-4 bg-white bg-opacity-25 p-2">
+                          <img class="img-fluid" src="images/icons/bs.png">
+                          <span class="text-center">BootStrap</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-4 mt-2 mt-md-0">
+                        <div
+                          class="language-item d-flex justify-content-center align-content-center border border-white rounded-4 bg-white bg-opacity-25 p-2">
+                          <img class="img-fluid" src="images/icons/css.png">
+                          <span class="text-center">CSS</span>
+                        </div>
+                      </div>
+                      <div class="col-6 mt-2 mt-lg-4">
+                        <div
+                          class="language-item d-flex justify-content-center align-content-center border border-white rounded-4 bg-white bg-opacity-25 p-2">
+                          <img class="img-fluid" src="images/icons/js.png">
+                          <span class="text-center">JavaScript</span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 mt-md-2 mt-lg-4">
+                        <div
+                          class="language-item d-flex justify-content-center align-content-center border border-white rounded-4 bg-white bg-opacity-25 p-2">
+                          <img class="img-fluid" src="images/icons/github.svg">
+                          <a class="text-center text-white text-decoration-none"
+                            href="https://github.com/sergiobs01/Portfolio">GitHub</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Education page -->
+  <div id="edupage" class="container-fluid edupage position-absolute text-white closed">
+    <div class="container-fluid d-flex justify-content-center align-items-center ">
+      <div class="text-center edupage-icon border border-white rounded fw-bold">
+        FORMACIÓN
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="title">Titulación</div>
+
+      <div class="degree">CFGS Desarrollador de aplicaciones multiplataforma.</div>
+      <div class="time">Septiembre 2020 - Junio 2022</div>
+
+      <div class="degree">CFGS Administración de Sistemas Informáticos en Red (A distancia).</div>
+      <div class="time">Septiembre 2023 - Actualmente</div>
+
+      <div class="degree">CFGM Impresión grafica.</div>
+      <div class="time">Septiembre 2018 - Junio 2020</div>
+
+      <div class="title">Cursos</div>
+
+      <div class="degree">Formación DevOps (175 horas).</div>
+      <div class="time">Impartido por <span class="fw-bold text-warning">HTIC CONSULTORIA Y FORMACIÓN, S.L.</span>
+        <a class="text-info text-decoration-none fw-bold ms-md-5" href="#">Certificación</a>
+      </div>
+
+      <div class="degree">Flutter (42,5 horas).</div>
+      <div class="time">Impartido por <span class="fw-bold text-warning">Udemy</span>.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Experience page -->
+  <div id="experiencepage" class="container-fluid experiencepage position-absolute text-white closed">
+    <div class="container-fluid d-flex justify-content-center align-items-center ">
+      <div class="text-center experiencepage-icon border border-white rounded fw-bold">
+        EXPERIENCIA
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <section class="design-section">
+        <div class="timeline">
+
+          <div class="timeline-empty">
+          </div>
+
+          <div class="timeline-middle">
+            <div class="timeline-circle"></div>
+          </div>
+
+          <div class="timeline-component timeline-content">
+            <div class="h3">Iconos Software S.L.</div>
+            <div>
+              Junio 2022 - Enero 2023
+              <br><br>
+              Funciones:
+              <br>
+              - Desarrollador de aplicaciones móviles (Java y Flutter) y de Escritorio (.NET).
+              <br>
+              - Implementación de BBDD.
+              <br>
+              - Atención al cliente.
+            </div>
+          </div>
+
+        </div>
+    </div>
+    </section>
+
+  </div>
+
+  <!-- Skills page -->
+  <div id="skillspage" class="container-fluid skillspage position-absolute text-white closed">
+    <div class="container-fluid d-flex justify-content-center align-items-center ">
+      <div class="text-center skillspage-icon border border-white rounded fw-bold mb-md-5">
+        HABILIDADES
+      </div>
+    </div>
+
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+      <div class="d-block">
+        <div class="title text-center">
+          Lenguajes de programación Escritorio/Móvil
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-6 col-md-3">
+            <div
+              class="language-item d-flex justify-content-center align-content-center border border-white rounded-5 py-2 px-4">
+              <img class="img-fluid" src="images/icons/java.png">
+              <span class="text-center">Java</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 text-center">
+            <div
+              class="language-item d-flex justify-content-center align-content-center border border-white rounded-5 py-2 px-4">
+              <img class="img-fluid" src="images/icons/kotlin.png">
+              <span class="text-center">Kotlin</span>
+            </div>
+          </div>
+          <div class="col-6 mt-2 mt-md-0 col-md-3 text-center">
+            <div
+              class="language-item d-flex justify-content-center align-content-center border border-white rounded-5 py-2 px-4">
+              <img class="img-fluid" src="images/icons/c_sharp.png">
+              <span class="text-center">C#</span>
+            </div>
+          </div>
+          <div class="col-6 mt-2 mt-md-0 col-md-3 text-center">
+            <div
+              class="language-item d-flex justify-content-center align-content-center border border-white rounded-5 py-2 px-4">
+              <img class="img-fluid" src="images/icons/dart.png">
+              <span class="text-center">Dart</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="subtitle text-center mt-4">
+          Frameworks
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-6">
+            <div
+              class="framework-item d-flex justify-content-center align-content-center border border-white rounded-5 py-2 px-4">
+              <img class="img-fluid" src="images/icons/flutter.png">
+              <span class="text-center">Flutter</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div
+              class="framework-item d-flex justify-content-center align-content-center border border-white rounded-5 py-2 px-4">
+              <img class="img-fluid" src="images/icons/dot_net.png">
+              <span class="text-center">.NET</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="title2 text-center">
+          Lenguajes de programación Web
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-6 col-md-4 text-center">
+            <div
+              class="language-item d-flex justify-content-center align-content-center border border-white rounded-5 py-2 px-4">
+              <img class="img-fluid" src="images/icons/html.png">
+              <span class="text-center">HTML</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 text-center">
+            <div
+              class="language-item d-flex justify-content-center align-content-center border border-white rounded-5 py-2 px-4">
+              <img class="img-fluid" src="images/icons/css.png">
+              <span class="text-center">CSS</span>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 text-center">
+            <div
+              class="language-item d-flex justify-content-center align-content-center border border-white rounded-5 py-2 px-4">
+              <img class="img-fluid" src="images/icons/js.png">
+              <span class="text-center">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="subtitle text-center mt-4">
+          Frameworks
+        </div>
+
+        <div class="row mt-4 mb-5">
+          <div class="col-12">
+            <div
+              class="framework-item d-flex justify-content-center align-content-center border border-white rounded-5 py-2 px-4">
+              <img class="img-fluid" src="images/icons/bs.png">
+              <span class="text-center">BootStrap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load BootStrap Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="scripts/home.js"></script>
+</body>
+
+</html>

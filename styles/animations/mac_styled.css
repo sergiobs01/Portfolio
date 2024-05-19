@@ -1,0 +1,201 @@
+/* MacOS Window */
+
+.mac-window {
+  border: 1px solid #424242;
+  border-radius: 10px;
+  width: 90vw;
+  height: 90vh;
+  margin: 30px auto;
+  background-color: rgba(50, 50, 50, 0.95);
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.mac-title-bar {
+  background-color: #393939;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mac-title {
+  font-weight: bold;
+  flex-grow: 1;
+  /* Expand maximum */
+  text-align: center;
+  /* Text center */
+}
+
+/* MacOS Buttons Style */
+
+.mac-buttons {
+  display: flex;
+}
+
+.mac-button {
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  /* Keep buttons circle */
+}
+
+/* Buttons with img */
+
+.mac-close {
+  background-image: url("../../images/traffic_off/Close_Button_off.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mac-minimize {
+  background-image: url("../../images/traffic_off/Minimize_Button_off.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mac-zoom {
+  background-image: url("../../images/traffic_off/Maximize_Button_off.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+.console::after {
+  content: "";
+  position: relative;
+  top: 0;
+  right: -5px;
+  /* Remove display: inline-block if not required to be on the same line as text etc */
+  display: inline-block;
+  background-color: #606060;
+  vertical-align: top;
+  width: 10px;
+  /* Set height to the line height of .text */
+  height: 24px;
+  /* 
+  Animation paramaters:
+  blink = animation-name, 
+  1s = animation-duration, 
+  step-end = animation-timing-function,
+  infinite = animation-iteration-count
+  */
+  -webkit-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+}
+
+.btn-terminal {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 1.75rem;
+}
+
+.btn-terminal:after,
+.navbar .nav-item .nav-link:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: relative;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.btn-terminal:hover:after,
+.navbar .nav-item .nav-link:hover:after,
+.navbar .nav-item .nav-link.active:after {
+  width: 100%;
+  left: 0;
+}
+
+.console-text-welcome {
+  margin-top: 7.5%;
+}
+
+.row-terminal {
+  bottom: 12.5%;
+}
+
+.macos-window {
+  transition: transform 0.5s ease-in-out;
+}
+
+.macos-window.minimized {
+  transform: translate(30%, 56%) scale(0);
+}
+
+.macos-window.closed {
+  transform: translate(0%, 0%) scale(0);
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.0;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.0;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  .console {
+    font-size: 0.75rem;
+  }
+
+  .console-text {
+    width: 78vw;
+    font-size: 0.9rem;
+  }
+
+  .console-text-welcome {
+    font-size: 1.25rem;
+    margin-bottom: 5%;
+    margin-top: 20%;
+  }
+
+  .console::after {
+    width: 6px;
+    /* Set height to the line height of .text */
+    height: 14px;
+  }
+
+  .btn-terminal {
+    font-size: 0.9rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  /*.row-terminal{
+    margin-top: 60%;
+  }*/
+}

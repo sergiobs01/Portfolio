@@ -1,0 +1,17 @@
+/* Animations for tabs */
+
+.aboutpage,
+.projectspage,
+.edupage,
+.experiencepage,
+.skillspage {
+    transition: transform 0.5s ease-in-out;
+}
+
+.aboutpage.closed,
+.projectspage.closed,
+.edupage.closed,
+.experiencepage.closed,
+.skillspage.closed {
+    transform: translate(0%, 0%) scale(0);
+}
